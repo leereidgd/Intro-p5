@@ -1,4 +1,4 @@
-const myColors = ["#c4f1be", "#A2C3A4", "#869D96", "#525B76", "#201E50" ];
+// const myColors = ["#c4f1be", "#A2C3A4", "#869D96", "#525B76", "#201E50" ];
 
 // function setup() {
   // createCanvas(800, 800);
@@ -10,33 +10,33 @@ const myColors = ["#c4f1be", "#A2C3A4", "#869D96", "#525B76", "#201E50" ];
   // let gridSize = 40
   // let gridSize = 50
   // let cols, rows
-  let gridSize = 100
-  let cols, rows
-  function setup() {
-    createCanvas(400,400);
-    cols = int(width/gridSize);
-    rows = int(height/gridSize);
-    background("#201E50")
-    // noLoop()
-  }
+//   let gridSize = 100
+//   let cols, rows
+//   function setup() {
+//     createCanvas(400,400);
+//     cols = int(width/gridSize);
+//     rows = int(height/gridSize);
+//     background("#201E50")
+//     // noLoop()
+//   }
 
-  function star(x, y, radius1, radius2, npoints) {
-  let angle = TWO_PI / npoints;
-  let halfAngle = angle / 2.0;
-  beginShape();
-  for (let a = 0; a < TWO_PI; a += angle) {
-    let sx = x + cos(a) * radius2;
-    let sy = y + sin(a) * radius2;
-    vertex(sx, sy);
-    sx = x + cos(a + halfAngle) * radius1;
-    sy = y + sin(a + halfAngle) * radius1;
-    vertex(sx, sy);
-  }
-  endShape(CLOSE);
-}
+//   function star(x, y, radius1, radius2, npoints) {
+//   let angle = TWO_PI / npoints;
+//   let halfAngle = angle / 2.0;
+//   beginShape();
+//   for (let a = 0; a < TWO_PI; a += angle) {
+//     let sx = x + cos(a) * radius2;
+//     let sy = y + sin(a) * radius2;
+//     vertex(sx, sy);
+//     sx = x + cos(a + halfAngle) * radius1;
+//     sy = y + sin(a + halfAngle) * radius1;
+//     vertex(sx, sy);
+//   }
+//   endShape(CLOSE);
+// }
 
 
-function draw() {
+// function draw() {
   // fill("#c4f1be");
   // ellipse(width/2, height/2, 300);
   // let eyeSize = map(mouseX, 0, width, 10, 50);
@@ -160,28 +160,28 @@ function draw() {
 //   endShape(CLOSE);
 // }
   
-for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
-      let x = i * gridSize + gridSize/2
-      let y = j * gridSize + gridSize/2
-      // star(x, y, gridSize*0.3, gridSize*0.5, 5) // don't do this, use push(), pop(), and translate()
-      noStroke()
-      push()
-      translate(x, y) // (0,0) is now this cell's new center
-      // star face
-      fill("#F3DFA2")
-      push()
-      rotate(frameCount / 30.0)
-      star(0,0,gridSize*0.25, gridSize*0.4, 5) 
-      // mouth
-      fill("#BB4430")
-      ellipse(0,0+gridSize*0.1, gridSize*0.1, gridSize*0.1)
-      // eyes
-      fill("#7EBDC2")
-      rectMode(CENTER)
-      rect(0-gridSize*0.1,0-gridSize*0.1, gridSize*0.05, gridSize*0.2) // leftE
-      rect(0+gridSize*0.1,0-gridSize*0.1, gridSize*0.05, gridSize*0.2) // rightE
-      pop()
+// for (let i = 0; i < cols; i++) {
+//     for (let j = 0; j < rows; j++) {
+//       let x = i * gridSize + gridSize/2
+//       let y = j * gridSize + gridSize/2
+//       // star(x, y, gridSize*0.3, gridSize*0.5, 5) // don't do this, use push(), pop(), and translate()
+//       noStroke()
+//       push()
+//       translate(x, y) // (0,0) is now this cell's new center
+//       // star face
+//       fill("#F3DFA2")
+//       push()
+//       rotate(frameCount / 30.0)
+//       star(0,0,gridSize*0.25, gridSize*0.4, 5) 
+//       // mouth
+//       fill("#BB4430")
+//       ellipse(0,0+gridSize*0.1, gridSize*0.1, gridSize*0.1)
+//       // eyes
+//       fill("#7EBDC2")
+//       rectMode(CENTER)
+//       rect(0-gridSize*0.1,0-gridSize*0.1, gridSize*0.05, gridSize*0.2) // leftE
+//       rect(0+gridSize*0.1,0-gridSize*0.1, gridSize*0.05, gridSize*0.2) // rightE
+//       pop()
 
       
       
