@@ -4,4 +4,55 @@ html, body {
 }
 canvas {
   display: block;
+  max-width: 100%;
+  height: auto;
+}
+.layout {
+  display: grid;
+  grid-template-columns: 400px minmax(220px, 1fr) minmax(220px, 1fr);
+  align-items: start;
+  gap: 1rem;
+  padding: 1rem;
+}
+.canvas-panel {
+  width: min(400px, 100%);
+}
+.controls {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+  min-width: 0;
+}
+.settings-column h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+}
+.control {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.25rem 0.75rem;
+}
+.control input {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+.control input[type="range"] {
+  accent-color: #F2622E;
+}
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: minmax(0, 400px) minmax(220px, 1fr);
+  }
+  .canvas-panel {
+    grid-row: span 2;
+  }
+}
+@media (max-width: 700px) {
+  .layout {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .canvas-panel {
+    grid-row: auto;
+    width: min(400px, 100%);
+  }
 }
