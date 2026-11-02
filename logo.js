@@ -75,8 +75,10 @@ function draw() {
   background(backgroundColorPicker.value());
   translate (width/2, height/2);
   if (showLines1Checkbox.checked()){
+    push()
     drawCircles()
     drawLines1()
+    pop()
   }
   push()
   rotate(radians(spiderRotationSlider.value()))
@@ -149,7 +151,7 @@ function drawSpiderRadialLines() {
 
   push()
   stroke(spiderBodyColor)
-  strokeWeight(max(8, lines1StrokeWeightSlider.value() * 2))
+  strokeWeight(lines1StrokeWeightSlider.value())
   strokeCap(ROUND)
   for (const side of [-1, 1]) {
     for (let i = 0; i < attachOffsets.length; i++) {
@@ -198,6 +200,7 @@ function drawCircles () {
   let num = circleNumSlider.value()
   let gap = circleGapSlider.value()
   stroke(circles1ColorPicker.value())
+  strokeWeight(lines1StrokeWeightSlider.value())
   for (let i = 0; i < num; i++) {
     push ()
     drawHexagon(0, 0, ((i + 1) * gap) / 2)
