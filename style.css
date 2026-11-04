@@ -5,11 +5,17 @@ html, body {
 canvas {
   display: block;
   max-width: 100%;
-  height: auto;
+  height: auto !important;
+}
+#canvas-container {
+  width: min(100%, 1000px);
+}
+#canvas-container canvas {
+  width: 100% !important;
 }
 .cover {
   display: block;
-  width: min(400px, 100%);
+  width: min(200px, 100%);
   height: auto;
   margin-top: 1rem;
 }
