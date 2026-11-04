@@ -7,6 +7,12 @@ canvas {
   max-width: 100%;
   height: auto;
 }
+.cover {
+  display: block;
+  width: min(200px, 100%);
+  height: auto;
+  margin-top: 1rem;
+}
 .layout {
   display: grid;
   grid-template-columns: 400px minmax(220px, 1fr) minmax(220px, 1fr);
