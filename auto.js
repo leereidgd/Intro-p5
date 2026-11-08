@@ -64,5 +64,5 @@ function draw() {
     endShape(CLOSE);
     offset += 0.01;
 
-    // I followed Patt Vira's tutorial on Bezeir Curves and aspects of the code)
+   // I followed Patt Vira's tutorial on bézier curves and changed aspects of the code
 }
