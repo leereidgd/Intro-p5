@@ -30,6 +30,9 @@
 //     }
 // }
 
+const myColors = ["#F9C74F", "#F94144", "#577590", "#90BE6D", "#F3722C"];
+
+
 let offset = 0;
 function setup() {
     createCanvas(800, 800);
@@ -37,9 +40,9 @@ function setup() {
 
 function draw() {
     // background(220);
-    strokeWeight(1);
-    stroke(random(255), random(255), random(255));
-    // noFill();
+    strokeWeight(random(0.25, 2));
+    stroke(random(myColors));
+    fill(255);
     const x1 = noise(offset + 5) * width;
     const y1 = noise(offset + 300) * height;
     const x2 = noise(offset + 1) * width;
@@ -50,12 +53,16 @@ function draw() {
     const y4 = noise(offset + 40) * height;
 
     beginShape();
-    for (let t = 0; t <= 1; t += 0.05) {
+    for (let t = 0; t <= 1; t += 0.01) {
+        const wiggleX = (noise(t * 12 + offset, 20) - 0.5) * 40;
+        const wiggleY = (noise(t * 12 + offset, 40) - 0.5) * 40;
         vertex(
-            bezierPoint(x1, x2, x3, x4, t),
-            bezierPoint(y1, y2, y3, y4, t)
+            bezierPoint(x1, x2, x3, x4, t) + wiggleX,
+            bezierPoint(y1, y2, y3, y4, t) + wiggleY
         );
     }
     endShape(CLOSE);
     offset += 0.01;
+
+    // I followed Patt Vira's tutorial on Bezeir Curves and aspects of the code)
 }
